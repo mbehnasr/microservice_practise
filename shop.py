@@ -4,6 +4,7 @@ from fastapi import FastAPI, Depends, HTTPException
 from pydantic import BaseModel
 from typing import Dict
 from dotenv import load_dotenv
+import requests
 
 load_dotenv()
 app = FastAPI()

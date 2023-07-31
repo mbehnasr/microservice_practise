@@ -4,6 +4,7 @@ import os
 from fastapi import FastAPI, Depends, HTTPException
 from pydantic import BaseModel
 from typing import Dict
+import requests
 
 load_dotenv()
 
@@ -39,7 +40,7 @@ def load_orders_from_file() -> Dict[str, Dict[str, int]]:
             carts = json.load(file)
             return orders
     except FileNotFoundError:
-        return {}
+            return {}
 
 
 def save_orders_to_file(orders: Dict[str, Dict[str, int]]):
